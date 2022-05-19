@@ -127,7 +127,16 @@ function decode(letras) {
 
 // Desafio 10
 function techList(arrTech, name) {
-  // seu código aqui
+  let orderedArray = arrTech.sort();
+  let techListName = [];
+  if (arrTech.length == 0) {
+    return 'Vazio!';
+  } else if (arrTech.length > 0) {
+    for (index = 0; index < orderedArray.length; index += 1) {
+      techListName.push({tech: orderedArray[index], name: name});
+    }
+  }
+  return techListName;
 }
 
 module.exports = {
