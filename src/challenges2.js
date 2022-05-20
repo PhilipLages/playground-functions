@@ -24,7 +24,15 @@ function generatePhoneNumber(numbers) {
 
 // Desafio 12
 function triangleCheck(lineA, lineB, lineC) {
-  
+  if (lineA > (lineB + lineC) || lineB > (lineA + lineC) || lineC > (lineB + lineA)) {
+    return false;
+  } else if (lineA < (Math.abs(lineB - lineC)) || lineB < (Math.abs(lineA - lineC)) || lineC < (Math.abs(lineB - lineA))) {
+    return false;
+  } else if (lineA < (lineB + lineC) || lineB < (lineA + lineC) || lineC < (lineB + lineA)) {
+    return true;
+  } else if (lineA > (Math.abs(lineB - lineC)) || lineB > (Math.abs(lineA - lineC)) || lineC > (Math.abs(lineB - lineA))) {
+    return true;
+  }
 }
 
 // Desafio 13
