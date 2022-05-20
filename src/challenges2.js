@@ -16,13 +16,9 @@ function generatePhoneNumber(numbers) {
       if (countNumber >= 3) {
         return 'não é possível gerar um número de telefone com esses valores';
       };        
-    };
-  //  Lógica retirada do site https://www.florin-pop.com/blog/2019/04/jcc-create-a-phone-number/
-  let phoneNumber = '(xx) xxxxx-xxxx';       
-  numbers.forEach(item => {
-    phoneNumber = phoneNumber.replace('x', item); 
-  }); 
-    return phoneNumber;
+    }; 
+  let phoneNumber = `(${numbers.slice(0, 2).join('')}) ${numbers.slice(2, 7).join('')}-${numbers.slice(7).join('')}`;
+  return phoneNumber;
 };   
 
 
